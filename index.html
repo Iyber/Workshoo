@@ -17,5 +17,18 @@
   </button>
 </form>
   <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+    <script>
+      import Pageclip from 'pageclip'
+const pageclipAPIKey = 'api_mdqHyTeFpzUuEfG76JOWWkDclLqVtCDF'
+const pageclip = new Pageclip(pageclipAPIKey)
+
+pageclip.send({some: 'data'}).then((response) => {
+  console.log(response.status, response.data) // => 200, [Item, Item]
+}).then(() => {
+  return pageclip.fetch()
+}).then((response) => {
+  console.log(response.status, response.data) // => 200, [Item, Item]
+})
+    </script>
   </body>
 </html>
